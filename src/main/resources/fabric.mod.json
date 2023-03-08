@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "AstralStorage",
+  "id": "astralstorage",
   "version": "${version}",
   "name": "AstralStorage",
   "description": "",
@@ -9,7 +9,7 @@
     "repo": "https://github.com/Erdragh/AstralStorage"
   },
   "license": "MIT",
-  "icon": "assets/AstralStorage/icon.png",
+  "icon": "assets/astralstorage/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
