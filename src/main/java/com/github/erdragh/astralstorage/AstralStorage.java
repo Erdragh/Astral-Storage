@@ -17,18 +17,15 @@ import net.minecraft.util.registry.Registry;
 public class AstralStorage implements ModInitializer {
 
     public static final String MODID = "astralstorage";
-    public static final ScreenHandlerType<BackpackScreenHandler> BACKPACK_SCREEN_HANDLER;
+    public static final ScreenHandlerType<BackpackScreenHandler> BACKPACK_SCREEN_HANDLER = new ExtendedScreenHandlerType<>(BackpackScreenHandler::new);
 
     public static final Item BACKPACK_ITEM = new BackpackItem(new FabricItemSettings().group(ItemGroup.MISC), new BackpackInfo(9, 1));
-
-    static {
-        BACKPACK_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(new Identifier(MODID, "backpack_screen"), BackpackScreenHandler::new);
-    }
 
     @Override
     public void onInitialize() {
         C2SPackets.register();
 
         Registry.register(Registry.ITEM, new Identifier(MODID, "backpack"), BACKPACK_ITEM);
+        Registry.register(Registry.SCREEN_HANDLER, new Identifier(MODID, "backpack_screen"), BACKPACK_SCREEN_HANDLER);
     }
 }
